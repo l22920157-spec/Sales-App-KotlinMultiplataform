@@ -1,0 +1,19 @@
+CREATE TABLE CustomerEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    purchaseHistory INTEGER NOT NULL
+);
+
+selectAll:
+SELECT * FROM CustomerEntity;
+
+findById:
+SELECT * FROM CustomerEntity WHERE id = ?;
+
+insertOrReplace:
+INSERT OR REPLACE INTO CustomerEntity(id, name, email, purchaseHistory)
+VALUES (?, ?, ?, ?);
+
+deleteById:
+DELETE FROM CustomerEntity WHERE id = ?;

@@ -1,0 +1,21 @@
+CREATE TABLE ProductEntity (
+    code TEXT NOT NULL PRIMARY KEY,
+    description TEXT NOT NULL,
+    category TEXT NOT NULL,
+    price REAL NOT NULL,
+    stock INTEGER NOT NULL,
+    taxable INTEGER NOT NULL
+);
+
+selectAll:
+SELECT * FROM ProductEntity;
+
+findByCode:
+SELECT * FROM ProductEntity WHERE code = ?;
+
+insertOrReplace:
+INSERT OR REPLACE INTO ProductEntity(code, description, category, price, stock, taxable)
+VALUES (?, ?, ?, ?, ?, ?);
+
+deleteByCode:
+DELETE FROM ProductEntity WHERE code = ?;
